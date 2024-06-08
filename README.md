@@ -1,4 +1,4 @@
-- 👋 Hi, I’m Ruben Tri Ardian Saputea
+- 👋 Hi, I’m Ruben Tri Ardian Saputra
 - 👀 I’m interested in Backend Engineer
 - 🌱 I’m currently learning Golang
 - 💞️ I’m looking to collaborate on - 
