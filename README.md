@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @rubentri
+- 👋 Hi, I’m Ruben Tri Ardian Saputea
 - 👀 I’m interested in Backend Engineer
 - 🌱 I’m currently learning Golang
 - 💞️ I’m looking to collaborate on - 
@@ -7,6 +7,6 @@
 - ⚡ Fun fact: -
 
 <!---
-rubentri/rubentri is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Ruben Tri Ardian Saputra/rubentri is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
 --->
