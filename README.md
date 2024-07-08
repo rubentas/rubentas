@@ -1,6 +1,6 @@
 - 👋 Hi, I’m Ruben Tri Ardian Saputra
 - 👀 I’m interested in Backend Engineer
-- 🌱 I’m currently learning Golang
+- 🌱 I’m currently learning Laravel
 - 💞️ I’m looking to collaborate on - 
 - 📫 How to reach me (Email)rubentriardians@gmail.com or @rubentri_(Instagram)
 - 😄 Pronouns: -
