@@ -1,12 +1,12 @@
-- 👋 Hi, I’m Ruben Tri Ardian Saputra
-- 👀 I’m interested in Backend Dev/ Fullstack Dev
-- 🌱 I’m currently learning Laravel
-- 💞️ I’m looking to collaborate on - 
-- 📫 How to reach me (Email)rubentriardians@gmail.com or @rubentri_(Instagram)
-- 😄 Pronouns: -
-- ⚡ Fun fact: -
+- 👋 Hi, I’m **Ruben Tri Ardian Saputra**
+- 👀 I’m passionate about Backend & Fullstack Development
+- 🌱 Currently honing my skills in Laravel
+- 💼 Open to collaboration on exciting projects
+- 📬 Reach me at rubentriardians@gmail.com or connect on Instagram: @rubentas_
+- 😄 Pronouns: He/Him
+- ⚡ Fun fact: Always on the lookout for the latest tech trends and innovations!
 
 <!---
-Ruben Tri Ardian Saputra/rubentri is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Ruben Tri Ardian Saputra/rubentas is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
 --->
