@@ -1,6 +1,6 @@
 - 👋 Hi, I’m **Ruben Tri Ardian Saputra**
 - 👀 I’m passionate about Backend Dev
-- 🌱 Currently honing my skills in Laravel, Go, NextJS
+- 🌱 Currently honing my skills in Laravel, Go
 - 💼 Open to collaboration on exciting projects
 - 📬 Reach me at rubentriardians@gmail.com or connect on Instagram: @rubentas_
 - 😄 Pronouns: He/Him
