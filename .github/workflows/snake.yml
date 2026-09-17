@@ -1,35 +1,128 @@
-name: Generate Snake Animation
+# ══════════════════════════════════════════════════════════════════════
+#  🐍  SNAKE — Contribution Grid Animation
+# ══════════════════════════════════════════════════════════════════════
+#  Repo   : rubentas/rubentas       
+#  Path   : .github/workflows/snake.yml
+#  Output : pushed to the `output` branch, consumed by README.md
+#  Action : https://github.com/Platane/snk  (v3)
+#
+#  ┌─ CHECKLIST SEBELUM JALAN ──────────────────────────────────────┐
+#  │ 1. Repo rubentas/rubentas ada dan PUBLIC                       │
+#  │ 2. Settings → Actions → General → Workflow permissions         │
+#  │      → pilih "Read and write permissions"   ← paling sering    │
+#  │        kelupaan, dan bikin step push GAGAL                     │
+#  │ 3. File ini ada di DEFAULT branch (main/master),               │
+#  │      kalau tidak, trigger `schedule` tidak akan pernah jalan   │
+#  │ 4. Jalankan manual sekali: tab Actions → Generate Snake        │
+#  │      → "Run workflow"  (biar branch `output` langsung dibuat)  │
+#  └────────────────────────────────────────────────────────────────┘
+# ══════════════════════════════════════════════════════════════════════
+
+name: 🐍 Generate Snake
 
 on:
+  # Refresh tiap hari 22:00 UTC → 06:00 WITA (Banjarmasin).
+  # Snake-nya sudah fresh pas kamu bangun pagi.
   schedule:
-    - cron: "0 */12 * * *"
+    - cron: "0 22 * * *"
+
+  # Tombol "Run workflow" manual di tab Actions.
   workflow_dispatch:
+
+  # Regenerate tiap kali default branch di-update.
   push:
     branches:
       - main
       - master
 
+# Wajib: tanpa ini step push ke branch `output` akan 403.
+permissions:
+  contents: write
+
+# Jangan pernah generate dua kali barengan — batalkan yang lama.
+concurrency:
+  group: snake-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   generate:
+    name: Generate & push
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-
-    permissions:
-      contents: write
+    timeout-minutes: 15
 
     steps:
-      - name: Generate snake animation
-        uses: Platane/snk/svg-only@v3
+      # ───────────────────────────────────────────────────────────────
+      #  1. Generate semua varian animasi
+      # ───────────────────────────────────────────────────────────────
+      #  Format tiap baris: path/nama-file.ext?opsi=nilai&opsi=nilai
+      #
+      #  Opsi yang didukung:
+      #    palette          → github | github-dark | github-light
+      #    color_snake      → warna ularnya
+      #    color_dots       → 5 warna, dipisah koma, dari 0 kontribusi
+      #                       sampai kontribusi tertinggi
+      #    color_background → background (khusus .gif)
+      #
+      #  ⚠️ Dua file pertama WAJIB dengan nama persis itu —
+      #     README.md kamu memanggilnya langsung.
+      # ───────────────────────────────────────────────────────────────
+      - name: 🎨 Generate snake animations
+        uses: Platane/snk@v3
+        id: snake
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/github-contribution-grid-snake-soc.svg?color_snake=#00C9FF&color_dots=#161b22,#0d3a6b,#125a9e,#0A66C2,#00C9FF
+            dist/github-contribution-grid-snake-ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9&color_background=#0d1117
 
-      - name: Push snake animation to output branch
+      # ───────────────────────────────────────────────────────────────
+      #  2. Push hasilnya ke branch `output`
+      # ───────────────────────────────────────────────────────────────
+      #  Branch ini dibuat otomatis dan isinya ditimpa tiap run.
+      #  Jangan pernah commit manual ke sana.
+      # ───────────────────────────────────────────────────────────────
+      - name: 🚀 Push to output branch
         uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
           build_dir: dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # ───────────────────────────────────────────────────────────────
+      #  3. Ringkasan di halaman Actions (biar enak di-debug)
+      # ───────────────────────────────────────────────────────────────
+      - name: 📋 Job summary
+        if: always()
+        run: |
+          {
+            echo "## 🐍 Snake generated for \`${{ github.repository_owner }}\`"
+            echo ""
+            echo "| Varian | File | Dipakai di README |"
+            echo "|---|---|:---:|"
+            echo "| Light  | \`github-contribution-grid-snake.svg\`       | ✅ |"
+            echo "| Dark   | \`github-contribution-grid-snake-dark.svg\`  | ✅ |"
+            echo "| SOC    | \`github-contribution-grid-snake-soc.svg\`   | — |"
+            echo "| Ocean  | \`github-contribution-grid-snake-ocean.gif\` | — |"
+            echo ""
+            echo "Semua file ada di branch [\`output\`](https://github.com/${{ github.repository }}/tree/output)."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+# ══════════════════════════════════════════════════════════════════════
+#  MODE CEPAT (opsional)
+# ══════════════════════════════════════════════════════════════════════
+#  Action di atas jalan lewat Docker karena perlu bikin .gif — makan
+#  waktu beberapa menit. Kalau kamu tidak butuh gif, ganti step
+#  "Generate snake animations" dengan versi svg-only yang jauh lebih
+#  cepat, lalu hapus baris .gif dari outputs:
+#
+#      - name: 🎨 Generate snake animations
+#        uses: Platane/snk/svg-only@v3
+#        with:
+#          github_user_name: ${{ github.repository_owner }}
+#          outputs: |
+#            dist/github-contribution-grid-snake.svg
+#            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+# ══════════════════════════════════════════════════════════════════════
