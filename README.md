@@ -30,31 +30,18 @@
 
 ## 🚨 Detection Triggered
 
-```yaml
-title: Aspiring SOC Analyst Detected
-id: rubentas-0001
-status: experimental
-description: >
-  Detects a fresh graduate converting raw authentication logs
-  into actionable, evidence-backed security investigations.
-author: Ruben Tri Ardian Saputra
-logsource:
-  category: career
-  product: banjarmasin.id
-detection:
-  selection:
-    role:      'Fresh Graduate — Informatics Engineering'
-    focus:     ['Blue Team', 'Detection Engineering', 'Security Automation']
-    stack:     ['Python', 'Laravel', 'PHP', 'Bash', 'MySQL']
-    building:  'Tools that help analysts triage faster'
-  condition: selection and status_open_to_work
-falsepositives:
-  - None. He is genuinely available.
-level: high
-tags:
-  - attack.t1110
-  - career.hire_me
-```
+> **Rule:** `Aspiring SOC Analyst Detected` · **Level:** `HIGH` · **Status:** `Open to Work`
+
+| | |
+|---|---|
+| **Author** | Ruben Tri Ardian Saputra |
+| **Role** | Fresh Graduate — Informatics Engineering |
+| **Focus** | Blue Team · Detection Engineering · Security Automation |
+| **Stack** | Python · Laravel · PHP · MySQL |
+| **Building** | Tools that help analysts triage faster |
+| **False positives** | None. He is genuinely available. |
+
+`condition:` **selection** and **status_open_to_work** → **alert fired** 🚨
 
 ---
 
@@ -165,18 +152,18 @@ if __name__ == "__main__":
 
 No inflated logos — here's where I actually am:
 
-```text
-Python                 ████████████████░░░░   Comfortable  · tooling, parsing, automation
-Laravel / PHP          ███████████████░░░░░   Comfortable  · backend, auth, CRUD
-Log Analysis           ████████████░░░░░░░░   Working on it · syslog, auth logs, IOC extraction
-Linux / Bash           ███████████░░░░░░░░░   Working on it · daily driver, scripting
-MITRE ATT&CK           █████████░░░░░░░░░░░   Learning      · evidence-based mapping
-Networking / Wireshark ███████░░░░░░░░░░░░░   Learning      · TCP/IP, packet analysis
-SIEM (Splunk / ELK)    ████░░░░░░░░░░░░░░░░   Next up
-Sigma / Detection Eng  ████░░░░░░░░░░░░░░░░   Next up
-```
+| Skill | Level | Notes |
+|:---|:---:|:---|
+| **Python** | ▰▰▰▰▱ | Comfortable — tooling, parsing, automation |
+| **Laravel / PHP** | ▰▰▰▰▱ | Comfortable — backend, auth, CRUD |
+| **Log Analysis** | ▰▰▰▱▱ | Working on it — syslog, auth logs, IOC extraction |
+| **Linux / Bash** | ▰▰▰▱▱ | Working on it — daily driver, scripting |
+| **MITRE ATT&CK** | ▰▰▱▱▱ | Learning — evidence-based mapping |
+| **Networking / Wireshark** | ▰▰▱▱▱ | Learning — TCP/IP, packet analysis |
+| **SIEM (Splunk / ELK)** | ▰▱▱▱▱ | Next up |
+| **Sigma / Detection Eng** | ▰▱▱▱▱ | Next up |
 
-> I'd rather be trusted on five skills than doubted on fifteen.
+> *I'd rather be trusted on five skills than doubted on fifteen.*
 
 ---
 
