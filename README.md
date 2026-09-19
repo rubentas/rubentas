@@ -70,7 +70,7 @@ class SOCAnalystInProgress:
         self.name       = "Ruben Tri Ardian Saputra"
         self.role       = "Fresh Graduate | Aspiring SOC Analyst"
         self.location   = "Banjarmasin, Indonesia"
-        self.languages  = ["Python", "PHP", "JavaScript", "Bash"]
+        self.languages  = ["Python", "PHP", "JavaScript"]
         self.frameworks = ["Laravel"]
         self.focus      = ["Blue Team", "Detection Engineering", "Security Automation"]
         self.currently  = "Building tools that help analysts triage faster"
@@ -130,7 +130,7 @@ if __name__ == "__main__":
 <div align="center">
 
 <h3>💻 Languages &amp; Frameworks</h3>
-<img alt="languages" src="https://skillicons.dev/icons?i=python,php,laravel,js,html,css,mysql,bash&theme=dark&perline=8" />
+<img alt="languages" src="https://skillicons.dev/icons?i=python,php,laravel,js,html,css,mysql&theme=dark&perline=8" />
 
 <h3>🛡️ Security &amp; Blue Team</h3>
 <img alt="mitre" src="https://img.shields.io/badge/MITRE%20ATT%26CK-Technique%20Mapping-B4232C?style=for-the-badge&labelColor=1a1a1a" />
@@ -157,7 +157,7 @@ No inflated logos — here's where I actually am:
 | **Python** | ▰▰▰▰▱ | Comfortable — tooling, parsing, automation |
 | **Laravel / PHP** | ▰▰▰▰▱ | Comfortable — backend, auth, CRUD |
 | **Log Analysis** | ▰▰▰▱▱ | Working on it — syslog, auth logs, IOC extraction |
-| **Linux / Bash** | ▰▰▰▱▱ | Working on it — daily driver, scripting |
+| **Linux** | ▰▰▰▱▱ | Working on it — daily driver, scripting |
 | **MITRE ATT&CK** | ▰▰▱▱▱ | Learning — evidence-based mapping |
 | **Networking / Wireshark** | ▰▰▱▱▱ | Learning — TCP/IP, packet analysis |
 | **SIEM (Splunk / ELK)** | ▰▱▱▱▱ | Next up |
